@@ -2,12 +2,25 @@
 //
 
 #include <iostream>
-
+#include"Calculator.h"
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
-}
+	double x, y, result;
+	char oper;
 
+	Calculator c;
+	while (true) {
+		char ch;
+		cout << "請輸入運算式: ";
+		cin >> x >> oper >> y;
+		result = c.Calculate(x, oper, y);
+		cout << "Result: "<<result<<endl;
+		cout << "是否繼續? (y/n)" << endl;
+		cin >> ch;
+		if (ch != 'y')break;
+	}
+}
 // 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表
 // 偵錯程式: F5 或 [偵錯] > [啟動偵錯] 功能表
 
